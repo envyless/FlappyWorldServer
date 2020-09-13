@@ -1,0 +1,81 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "FlappyWorldServer/1.0.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.13.0",
+          "Google.ProtocolBuffers": "2.4.1.555"
+        },
+        "runtime": {
+          "FlappyWorldServer.dll": {}
+        }
+      },
+      "Google.Protobuf/3.13.0": {
+        "dependencies": {
+          "System.Memory": "4.5.2",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.13.0.0",
+            "fileVersion": "3.13.0.0"
+          }
+        }
+      },
+      "Google.ProtocolBuffers/2.4.1.555": {
+        "runtime": {
+          "lib/net40/Google.ProtocolBuffers.Serialization.dll": {
+            "assemblyVersion": "2.4.1.555",
+            "fileVersion": "2.4.1.555"
+          },
+          "lib/net40/Google.ProtocolBuffers.dll": {
+            "assemblyVersion": "2.4.1.555",
+            "fileVersion": "2.4.1.555"
+          }
+        }
+      },
+      "System.Memory/4.5.2": {},
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {}
+    }
+  },
+  "libraries": {
+    "FlappyWorldServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Google.Protobuf/3.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/6VgKCh0P59x/rYsBkCvkUanF0TeUYzwV9hzLIWgt23QRBaKHoxaaMkidEWhKibLR88c3PVCXyyrx9Xlb+Ne6w==",
+      "path": "google.protobuf/3.13.0",
+      "hashPath": "google.protobuf.3.13.0.nupkg.sha512"
+    },
+    "Google.ProtocolBuffers/2.4.1.555": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JsaOFX3nr6F0nGkGk7stbD2jTpvy7vgBuY+chB6+qsimMPu7YvQ6BgNOjjHd2xFqmByUCUD8pF9D07kPug8N1g==",
+      "path": "google.protocolbuffers/2.4.1.555",
+      "hashPath": "google.protocolbuffers.2.4.1.555.nupkg.sha512"
+    },
+    "System.Memory/4.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fvq1GNmUFwbKv+aLVYYdgu/+gc8Nu9oFujOxIjPrsf+meis9JBzTPDL6aP/eeGOz9yPj6rRLUbOjKMpsMEWpNg==",
+      "path": "system.memory/4.5.2",
+      "hashPath": "system.memory.4.5.2.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+    }
+  }
+}

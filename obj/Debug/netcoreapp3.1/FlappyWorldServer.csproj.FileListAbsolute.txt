@@ -1,0 +1,17 @@
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/FlappyWorldServer
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/FlappyWorldServer.deps.json
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/FlappyWorldServer.runtimeconfig.json
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/FlappyWorldServer.runtimeconfig.dev.json
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/FlappyWorldServer.dll
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/FlappyWorldServer.pdb
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/obj/Debug/netcoreapp3.1/FlappyWorldServer.csprojAssemblyReference.cache
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/obj/Debug/netcoreapp3.1/FlappyWorldServer.AssemblyInfoInputs.cache
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/obj/Debug/netcoreapp3.1/FlappyWorldServer.AssemblyInfo.cs
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/obj/Debug/netcoreapp3.1/FlappyWorldServer.csproj.CoreCompileInputs.cache
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/obj/Debug/netcoreapp3.1/FlappyWorldServer.dll
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/obj/Debug/netcoreapp3.1/FlappyWorldServer.pdb
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/obj/Debug/netcoreapp3.1/FlappyWorldServer.genruntimeconfig.cache
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/Google.Protobuf.dll
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/Google.ProtocolBuffers.Serialization.dll
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/Google.ProtocolBuffers.dll
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/obj/Debug/netcoreapp3.1/FlappyWorldServer.csproj.CopyComplete
