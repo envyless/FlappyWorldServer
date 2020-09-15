@@ -1,12 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "2GL42SaAGeKJ56dmEvJIh/mjw9x80Ty2fVJef00s6uklg4GaQIIoa22ISvbkxdYipw4jbYLx/wM4lKPunbYJQw==",
+  "dgSpecHash": "bix5jybv+J0DD+AvhNDIk5AcnrhUj9z4bmarfhmm54n5AKsJflrHbd5cRY8if5Oz8za1Opc75XwSLT5rqZ2xYA==",
   "success": true,
   "projectFilePath": "/home/encyless/projects/ubuntu_projects/FlappyWorldServer/FlappyWorldServer.csproj",
   "expectedPackageFiles": [
     "/home/encyless/.nuget/packages/google.protobuf/3.13.0/google.protobuf.3.13.0.nupkg.sha512",
     "/home/encyless/.nuget/packages/google.protocolbuffers/2.4.1.555/google.protocolbuffers.2.4.1.555.nupkg.sha512",
+    "/home/encyless/.nuget/packages/reactiveproperty/7.2.1/reactiveproperty.7.2.1.nupkg.sha512",
+    "/home/encyless/.nuget/packages/reactiveproperty.core/7.2.1/reactiveproperty.core.7.2.1.nupkg.sha512",
+    "/home/encyless/.nuget/packages/system.componentmodel.annotations/4.7.0/system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "/home/encyless/.nuget/packages/system.memory/4.5.2/system.memory.4.5.2.nupkg.sha512",
+    "/home/encyless/.nuget/packages/system.reactive/4.4.1/system.reactive.4.4.1.nupkg.sha512",
     "/home/encyless/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.2/system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
   ],
   "logs": [

@@ -43,6 +43,14 @@
             "Google.ProtocolBuffers": {
               "target": "Package",
               "version": "[2.4.1.555, )"
+            },
+            "ReactiveProperty": {
+              "target": "Package",
+              "version": "[7.2.1, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[4.4.1, )"
             }
           },
           "imports": [

@@ -4,6 +4,8 @@ using System.Net.Sockets;
 using System.Text;
 using Google.Protobuf;
 using NetCoreServer;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace FlappyWorldServer
 {
@@ -42,7 +44,7 @@ namespace FlappyWorldServer
             }
             else
             {
-                Console.WriteLine("user name : " + user.UserId +"\nx : "+user.X+"\ny : "+user.Y+"\nisdead : "+user.IsDead);
+                UserMnanger.Instance.UpdateUser(user);
             }           
         }
 
@@ -52,7 +54,7 @@ namespace FlappyWorldServer
         }
     }
 
-    class ChatServer : TcpServer
+    public class ChatServer : TcpServer
     {
         public ChatServer(IPAddress address, int port) : base(address, port) {}
 
@@ -78,14 +80,18 @@ namespace FlappyWorldServer
             Console.WriteLine();
 
             // Create a new TCP chat server
-            var server = new ChatServer(IPAddress.Any, port);
-
+            MainGameEngine.Instance.server = new ChatServer(IPAddress.Any, port);
+            var server = MainGameEngine.Instance.server;
+            
             // Start the server
             Console.Write("Server starting...");
             server.Start();
             Console.WriteLine("Done!");
 
             Console.WriteLine("Press Enter to stop the server or '!' to restart the server...");
+
+            //Game Engine Start!        
+            MainGameEngine.Instance.Start();
 
             // Perform text input
             for (;;)

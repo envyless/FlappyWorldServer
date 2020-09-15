@@ -25,16 +25,17 @@ namespace Google.Protobuf {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChNDb21tdW5pY2F0aW9uLnByb3RvEg9nb29nbGUucHJvdG9idWYiRgoNUmVx",
-            "VXNlclVwZGF0ZRIPCgd1c2VyX2lkGAEgASgFEgkKAXgYAiABKAISCQoBeRgD",
-            "IAEoAhIOCgZpc0RlYWQYBCABKAgiHQoNUnNwVXNlclVwZGF0ZRIMCgR0ZXN0",
-            "GAEgASgFMlwKCkZvb1NlcnZpY2USTgoMR2V0U29tZXRoaW5nEh4uZ29vZ2xl",
-            "LnByb3RvYnVmLlJlcVVzZXJVcGRhdGUaHi5nb29nbGUucHJvdG9idWYuUnNw",
-            "VXNlclVwZGF0ZWIGcHJvdG8z"));
+            "VXNlclVwZGF0ZRIPCgd1c2VyX2lkGAEgASgJEgkKAXgYAiABKAISCQoBeRgD",
+            "IAEoAhIOCgZpc0RlYWQYBCABKAgiPgoNUnNwVXNlclVwZGF0ZRItCgV1c2Vy",
+            "cxgBIAMoCzIeLmdvb2dsZS5wcm90b2J1Zi5SZXFVc2VyVXBkYXRlMlwKCkZv",
+            "b1NlcnZpY2USTgoMR2V0U29tZXRoaW5nEh4uZ29vZ2xlLnByb3RvYnVmLlJl",
+            "cVVzZXJVcGRhdGUaHi5nb29nbGUucHJvdG9idWYuUnNwVXNlclVwZGF0ZWIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.ReqUserUpdate), global::Google.Protobuf.ReqUserUpdate.Parser, new[]{ "UserId", "X", "Y", "IsDead" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.RspUserUpdate), global::Google.Protobuf.RspUserUpdate.Parser, new[]{ "Test" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.RspUserUpdate), global::Google.Protobuf.RspUserUpdate.Parser, new[]{ "Users" }, null, null, null)
           }));
     }
     #endregion
@@ -80,12 +81,12 @@ namespace Google.Protobuf {
 
     /// <summary>Field number for the "user_id" field.</summary>
     public const int UserIdFieldNumber = 1;
-    private int userId_;
+    private string userId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int UserId {
+    public string UserId {
       get { return userId_; }
       set {
-        userId_ = value;
+        userId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -145,7 +146,7 @@ namespace Google.Protobuf {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (UserId != 0) hash ^= UserId.GetHashCode();
+      if (UserId.Length != 0) hash ^= UserId.GetHashCode();
       if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
       if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
       if (IsDead != false) hash ^= IsDead.GetHashCode();
@@ -162,9 +163,9 @@ namespace Google.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (UserId != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(UserId);
+      if (UserId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(UserId);
       }
       if (X != 0F) {
         output.WriteRawTag(21);
@@ -186,8 +187,8 @@ namespace Google.Protobuf {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (UserId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(UserId);
+      if (UserId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserId);
       }
       if (X != 0F) {
         size += 1 + 4;
@@ -209,7 +210,7 @@ namespace Google.Protobuf {
       if (other == null) {
         return;
       }
-      if (other.UserId != 0) {
+      if (other.UserId.Length != 0) {
         UserId = other.UserId;
       }
       if (other.X != 0F) {
@@ -232,8 +233,8 @@ namespace Google.Protobuf {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            UserId = input.ReadInt32();
+          case 10: {
+            UserId = input.ReadString();
             break;
           }
           case 21: {
@@ -279,7 +280,7 @@ namespace Google.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public RspUserUpdate(RspUserUpdate other) : this() {
-      test_ = other.test_;
+      users_ = other.users_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -288,15 +289,14 @@ namespace Google.Protobuf {
       return new RspUserUpdate(this);
     }
 
-    /// <summary>Field number for the "test" field.</summary>
-    public const int TestFieldNumber = 1;
-    private int test_;
+    /// <summary>Field number for the "users" field.</summary>
+    public const int UsersFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.ReqUserUpdate> _repeated_users_codec
+        = pb::FieldCodec.ForMessage(10, global::Google.Protobuf.ReqUserUpdate.Parser);
+    private readonly pbc::RepeatedField<global::Google.Protobuf.ReqUserUpdate> users_ = new pbc::RepeatedField<global::Google.Protobuf.ReqUserUpdate>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Test {
-      get { return test_; }
-      set {
-        test_ = value;
-      }
+    public pbc::RepeatedField<global::Google.Protobuf.ReqUserUpdate> Users {
+      get { return users_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -312,14 +312,14 @@ namespace Google.Protobuf {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Test != other.Test) return false;
+      if(!users_.Equals(other.users_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Test != 0) hash ^= Test.GetHashCode();
+      hash ^= users_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -333,10 +333,7 @@ namespace Google.Protobuf {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Test != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(Test);
-      }
+      users_.WriteTo(output, _repeated_users_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -345,9 +342,7 @@ namespace Google.Protobuf {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Test != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Test);
-      }
+      size += users_.CalculateSize(_repeated_users_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -359,9 +354,7 @@ namespace Google.Protobuf {
       if (other == null) {
         return;
       }
-      if (other.Test != 0) {
-        Test = other.Test;
-      }
+      users_.Add(other.users_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -373,8 +366,8 @@ namespace Google.Protobuf {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Test = input.ReadInt32();
+          case 10: {
+            users_.AddEntriesFrom(input, _repeated_users_codec);
             break;
           }
         }

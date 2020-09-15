@@ -15,3 +15,8 @@
 /home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/Google.ProtocolBuffers.Serialization.dll
 /home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/Google.ProtocolBuffers.dll
 /home/encyless/projects/ubuntu_projects/FlappyWorldServer/obj/Debug/netcoreapp3.1/FlappyWorldServer.csproj.CopyComplete
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/System.Reactive.dll
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/System.Reactive.xml
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/ReactiveProperty.dll
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/ReactiveProperty.Core.dll
+/home/encyless/projects/ubuntu_projects/FlappyWorldServer/bin/Debug/netcoreapp3.1/System.ComponentModel.Annotations.dll
