@@ -17,12 +17,11 @@ public class UsersTest
             user.Y = 0;
             user.IsDead = false;
             users.Add(user);
-            UserMnanger.Instance.UpdateUser(user);
+            //UserMnanger.Instance.UpdateUser(user);
         }
 
-        MainGameEngine.Instance.UpdateLogic.Subscribe(_=>{
-            UpdateTestUser();
-        });
+        //MainGameEngine.Instance.UpdateLogic.Subscribe(_=>{
+        //    UpdateTestUser();});
     }
 
     public void UpdateTestUser()

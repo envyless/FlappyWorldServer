@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using Google.Protobuf;
 
-public class UserMnanger : Singletone<UserMnanger>
-{
-
+public class UserMnanger : AbsGameManager
+{    
     public Dictionary<string, ReqUserUpdate> dictUsers = new Dictionary<string, ReqUserUpdate>();
+
+    public UserMnanger(MainGameEngine _engine) : base(_engine)
+    {
+    }
 
     //push or update user req
     public void UpdateUser(ReqUserUpdate reqUserUpdate)
@@ -19,5 +22,10 @@ public class UserMnanger : Singletone<UserMnanger>
         {
             dictUsers[reqUserUpdate.UserId] = reqUserUpdate;
         }       
-    } 
+    }
+
+    protected override void SetUp()
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -11,7 +11,11 @@ namespace FlappyWorldServer
 {
     class ChatSession : TcpSession
     {
-        public ChatSession(TcpServer server) : base(server) {}
+        ChatServer chatServer;
+
+        public ChatSession(TcpServer server) : base(server) {
+            chatServer = server as ChatServer;
+        }
 
         protected override void OnConnected()
         {
@@ -28,24 +32,19 @@ namespace FlappyWorldServer
         }
 
         protected override void OnReceived(byte[] buffer, long offset, long size)
-        {                       
-            var user = ReqUserUpdate.Parser.ParseFrom(buffer, (int)offset, (int)size) as ReqUserUpdate;
-            if(user == null)
-            {
-                string message = Encoding.UTF8.GetString(buffer, (int)offset, (int)size);
-                Console.WriteLine("Incoming: " + message);
-
-                // Multicast message to all connected sessions
-                Server.Multicast(message);
-
-                // If the buffer starts with '!' the disconnect the current session                
-                if (message == "!")
-                    Disconnect();
+        {                                 
+            //var user = ReqUserUpdate.Parser.ParseFrom(buffer, (int)offset, (int)size) as ReqUserUpdate;
+            try{
+                var req = Google.Protobuf.RequestRPC.Parser.ParseFrom(buffer, (int)offset, (int)size);
+                chatServer.engine.OnPacketRecieved(req);
+            }catch{
+                Console.WriteLine("Error when Parsing");
             }
-            else
-            {
-                UserMnanger.Instance.UpdateUser(user);
-            }           
+                        
+
+            //Google.Protobuf.MessageParser messageParser = new Google.Protobuf.MessageParser();
+            //a.ParseFrom(buffer,offset , size);
+            //chatServer.engine.OnPacketRecieved(user);                     
         }
 
         protected override void OnError(SocketError error)
@@ -56,7 +55,10 @@ namespace FlappyWorldServer
 
     public class ChatServer : TcpServer
     {
-        public ChatServer(IPAddress address, int port) : base(address, port) {}
+        public MainGameEngine engine;
+        public ChatServer(IPAddress address, int port) : base(address, port) {
+            //engine = _engine;
+        }
 
         protected override TcpSession CreateSession() { return new ChatSession(this); }
 
@@ -64,6 +66,19 @@ namespace FlappyWorldServer
         {
             Console.WriteLine($"Chat TCP server caught an error with code {error}");
         }
+        public void PrintMessage(IMessage message)
+        {
+            var descriptor = message.Descriptor;
+            foreach (var field in descriptor.Fields.InDeclarationOrder())
+            {
+                Console.WriteLine(
+                    "Field {0} ({1}): {2}",
+                    field.FieldNumber,
+                    field.Name,
+                    field.Accessor.GetValue(message));
+            }
+        }
+        
     }
 
     class Program
@@ -80,8 +95,9 @@ namespace FlappyWorldServer
             Console.WriteLine();
 
             // Create a new TCP chat server
-            MainGameEngine.Instance.server = new ChatServer(IPAddress.Any, port);
-            var server = MainGameEngine.Instance.server;
+            MainGameEngine engine = new MainGameEngine(); 
+            engine.server = new ChatServer(IPAddress.Any, port);            
+            var server = engine.server;
             
             // Start the server
             Console.Write("Server starting...");
@@ -91,7 +107,7 @@ namespace FlappyWorldServer
             Console.WriteLine("Press Enter to stop the server or '!' to restart the server...");
 
             //Game Engine Start!        
-            MainGameEngine.Instance.Start();
+            engine.Start();
 
             // Perform text input
             for (;;)
