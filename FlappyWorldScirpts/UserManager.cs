@@ -4,7 +4,7 @@ using Google.Protobuf;
 
 public class UserMnanger : AbsGameManager
 {    
-    public Dictionary<string, ReqUserUpdate> dictUsers = new Dictionary<string, ReqUserUpdate>();
+    public Dictionary<string, User> dictUsers = new Dictionary<string, User>();
 
     public UserMnanger(MainGameEngine _engine) : base(_engine)
     {
@@ -13,19 +13,20 @@ public class UserMnanger : AbsGameManager
     //push or update user req
     public void UpdateUser(ReqUserUpdate reqUserUpdate)
     {
-        dictUsers.TryGetValue(reqUserUpdate.UserId, out var user);
+        var userObject = reqUserUpdate.User;
+        dictUsers.TryGetValue(userObject.UserId, out var user);
         if(user == null)
         {
-            dictUsers.Add(reqUserUpdate.UserId, reqUserUpdate);
+            dictUsers.Add(userObject.UserId, reqUserUpdate.User);
         }
         else
         {
-            dictUsers[reqUserUpdate.UserId] = reqUserUpdate;
+            dictUsers[userObject.UserId] = reqUserUpdate.User;
         }       
     }
 
     protected override void SetUp()
     {
-        throw new NotImplementedException();
+        
     }
 }

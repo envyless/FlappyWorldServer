@@ -37,14 +37,9 @@ namespace FlappyWorldServer
             try{
                 var req = Google.Protobuf.RequestRPC.Parser.ParseFrom(buffer, (int)offset, (int)size);
                 chatServer.engine.OnPacketRecieved(req);
-            }catch{
-                Console.WriteLine("Error when Parsing");
-            }
-                        
-
-            //Google.Protobuf.MessageParser messageParser = new Google.Protobuf.MessageParser();
-            //a.ParseFrom(buffer,offset , size);
-            //chatServer.engine.OnPacketRecieved(user);                     
+            }catch(Exception e){
+                Console.WriteLine("Error when Parsing: "+e);
+            }                                      
         }
 
         protected override void OnError(SocketError error)
@@ -56,8 +51,8 @@ namespace FlappyWorldServer
     public class ChatServer : TcpServer
     {
         public MainGameEngine engine;
-        public ChatServer(IPAddress address, int port) : base(address, port) {
-            //engine = _engine;
+        public ChatServer(IPAddress address, int port, MainGameEngine _engine) : base(address, port) {
+            engine = _engine;
         }
 
         protected override TcpSession CreateSession() { return new ChatSession(this); }
@@ -96,7 +91,7 @@ namespace FlappyWorldServer
 
             // Create a new TCP chat server
             MainGameEngine engine = new MainGameEngine(); 
-            engine.server = new ChatServer(IPAddress.Any, port);            
+            engine.server = new ChatServer(IPAddress.Any, port, engine);            
             var server = engine.server;
             
             // Start the server

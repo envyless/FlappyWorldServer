@@ -46,9 +46,17 @@
             },
             "ReactiveProperty": {
               "target": "Package",
-              "version": "[7.2.1, )"
+              "version": "[7.4.0, )"
             },
             "System.Reactive": {
+              "target": "Package",
+              "version": "[4.4.1, )"
+            },
+            "System.Reactive.Core": {
+              "target": "Package",
+              "version": "[4.4.1, )"
+            },
+            "System.Reactive.Linq": {
               "target": "Package",
               "version": "[4.4.1, )"
             }

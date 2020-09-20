@@ -26,10 +26,10 @@
           "lib/net40/Google.ProtocolBuffers.dll": {}
         }
       },
-      "ReactiveProperty/7.2.1": {
+      "ReactiveProperty/7.4.0": {
         "type": "package",
         "dependencies": {
-          "ReactiveProperty.Core": "7.2.1",
+          "ReactiveProperty.Core": "7.4.0",
           "System.ComponentModel.Annotations": "4.7.0",
           "System.Reactive": "4.4.1"
         },
@@ -40,7 +40,7 @@
           "lib/netstandard2.0/ReactiveProperty.dll": {}
         }
       },
-      "ReactiveProperty.Core/7.2.1": {
+      "ReactiveProperty.Core/7.4.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/ReactiveProperty.Core.dll": {}
@@ -79,6 +79,32 @@
           "buildTransitive/netcoreapp3.0/System.Reactive.targets": {}
         }
       },
+      "System.Reactive.Core/4.4.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.4.1",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Reactive.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Reactive.Core.dll": {}
+        }
+      },
+      "System.Reactive.Linq/4.4.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reactive": "4.4.1",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Reactive.Linq.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Reactive.Linq.dll": {}
+        }
+      },
       "System.Runtime.CompilerServices.Unsafe/4.5.2": {
         "type": "package",
         "compile": {
@@ -86,6 +112,15 @@
         },
         "runtime": {
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.4": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
         }
       }
     }
@@ -174,29 +209,29 @@
         "tools/tutorial/addressbook.proto"
       ]
     },
-    "ReactiveProperty/7.2.1": {
-      "sha512": "nAnW+EisyWWgscYU81bsUJ0dR9KD3pvaQIsht3Ycs8znGnBBv1KmvfRKXIQtAtnvmJDwlLcydWoYBLX5mjn8GA==",
+    "ReactiveProperty/7.4.0": {
+      "sha512": "+kS8OAaXoOILkLxxMkFU7pg2XNs8URNHwupl70bI33K4hQZ+0qYPDveXmyPkWdNGu7PAlk27w7nK9rrNKo+htw==",
       "type": "package",
-      "path": "reactiveproperty/7.2.1",
+      "path": "reactiveproperty/7.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ReactivePropertyIcon_100x100.png",
         "lib/netstandard2.0/ReactiveProperty.dll",
-        "reactiveproperty.7.2.1.nupkg.sha512",
+        "reactiveproperty.7.4.0.nupkg.sha512",
         "reactiveproperty.nuspec"
       ]
     },
-    "ReactiveProperty.Core/7.2.1": {
-      "sha512": "beq/b/kFR7StJThlRRuDhkzphDqJADp4MNj+FPNyVr2uAPj9A6DBADRFxi93WUL4Ilm1OHwHhGOGj3tpZgFkTA==",
+    "ReactiveProperty.Core/7.4.0": {
+      "sha512": "22MXyavLP55OTePb139vG10pcqfkFqiS/VuK7LUM6vlXsX8rAlq9JEpXfE+nyiWGCsqa9SkKctFFG62honuDSg==",
       "type": "package",
-      "path": "reactiveproperty.core/7.2.1",
+      "path": "reactiveproperty.core/7.4.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ReactivePropertyIcon_100x100.png",
         "lib/netstandard2.0/ReactiveProperty.Core.dll",
-        "reactiveproperty.core.7.2.1.nupkg.sha512",
+        "reactiveproperty.core.7.4.0.nupkg.sha512",
         "reactiveproperty.core.nuspec"
       ]
     },
@@ -336,6 +371,42 @@
         "system.reactive.nuspec"
       ]
     },
+    "System.Reactive.Core/4.4.1": {
+      "sha512": "YQHJOt8hZvwFelIIfs19t8Jhz5P6NS1ZZccbVUuE1LFyoFZjaUecdYIYykgXzpyj5Rl40XC3xkyuuhHRaAln2w==",
+      "type": "package",
+      "path": "system.reactive.core/4.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/System.Reactive.Core.dll",
+        "lib/net46/System.Reactive.Core.xml",
+        "lib/netstandard2.0/System.Reactive.Core.dll",
+        "lib/netstandard2.0/System.Reactive.Core.xml",
+        "lib/uap10.0/System.Reactive.Core.dll",
+        "lib/uap10.0/System.Reactive.Core.pri",
+        "lib/uap10.0/System.Reactive.Core.xml",
+        "system.reactive.core.4.4.1.nupkg.sha512",
+        "system.reactive.core.nuspec"
+      ]
+    },
+    "System.Reactive.Linq/4.4.1": {
+      "sha512": "wyOVuUyHmPV667REPwcZjFjOlRLX6qSGVcXMye0qUqBAWFB3bu1RO1XLGWZTnf0d67DQHV69kw7tAtTh+4EYyQ==",
+      "type": "package",
+      "path": "system.reactive.linq/4.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/System.Reactive.Linq.dll",
+        "lib/net46/System.Reactive.Linq.xml",
+        "lib/netstandard2.0/System.Reactive.Linq.dll",
+        "lib/netstandard2.0/System.Reactive.Linq.xml",
+        "lib/uap10.0/System.Reactive.Linq.dll",
+        "lib/uap10.0/System.Reactive.Linq.pri",
+        "lib/uap10.0/System.Reactive.Linq.xml",
+        "system.reactive.linq.4.4.1.nupkg.sha512",
+        "system.reactive.linq.nuspec"
+      ]
+    },
     "System.Runtime.CompilerServices.Unsafe/4.5.2": {
       "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
       "type": "package",
@@ -360,14 +431,53 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+      "type": "package",
+      "path": "system.threading.tasks.extensions/4.5.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Threading.Tasks.Extensions.dll",
+        "lib/net461/System.Threading.Tasks.Extensions.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netcoreapp2.1/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Google.Protobuf >= 3.13.0",
       "Google.ProtocolBuffers >= 2.4.1.555",
-      "ReactiveProperty >= 7.2.1",
-      "System.Reactive >= 4.4.1"
+      "ReactiveProperty >= 7.4.0",
+      "System.Reactive >= 4.4.1",
+      "System.Reactive.Core >= 4.4.1",
+      "System.Reactive.Linq >= 4.4.1"
     ]
   },
   "packageFolders": {
@@ -415,9 +525,17 @@
           },
           "ReactiveProperty": {
             "target": "Package",
-            "version": "[7.2.1, )"
+            "version": "[7.4.0, )"
           },
           "System.Reactive": {
+            "target": "Package",
+            "version": "[4.4.1, )"
+          },
+          "System.Reactive.Core": {
+            "target": "Package",
+            "version": "[4.4.1, )"
+          },
+          "System.Reactive.Linq": {
             "target": "Package",
             "version": "[4.4.1, )"
           }

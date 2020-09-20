@@ -1,39 +1,50 @@
-using System;
-using System.Reactive;
-using System.Reactive.Subjects;
+using System.Collections.Generic;
 using System.Threading;
 using FlappyWorldServer;
 using Google.Protobuf;
+using System;
 using Reactive.Bindings;
+using System.Reactive.Linq;
 
 public class MainGameEngine
 {   
+    #region Managers
     //contains Managers
     public UserMnanger userManager;
     public CollisionManager collisionManager;
+    public RPCManager rpcManager;
+
+    public HashSet<Actor> allActors = new HashSet<Actor>();
+
+    public float deltaTime {get; private set;}
+
+    #endregion
+    
 
     public void SetUpManagers()
     {
         userManager = new UserMnanger(this);
         collisionManager = new CollisionManager(this);
+        rpcManager = new RPCManager(this);
     }
 
 
     public ReactiveProperty<float> UpdateLogic = new ReactiveProperty<float>();
-    public static float deltaTime = 0.1f;
     UsersTest usersTest;
     public ChatServer server;
 
     public void Start()
     {
-        Thread t1 = new Thread(new ThreadStart(MainLoop));        
-        usersTest = new UsersTest();        
-        t1.Start();
-        //test player
+        Thread t1 = new Thread(new ThreadStart(MainLoop));
+        SetUpManagers();
+        usersTest = new UsersTest(this); 
+        t1.Start();  
+
     }
 
     void MainLoop()
     {
+        deltaTime = 0.1f;
         while(true)
         {
             //initialized
@@ -47,7 +58,7 @@ public class MainGameEngine
             
             if(server == null)
             {
-                Console.WriteLine("server is null");
+                //Console.WriteLine("server is null");
                 continue;
                 
             }
@@ -62,7 +73,7 @@ public class MainGameEngine
 
     internal void OnPacketRecieved(RequestRPC req)
     {
-        Console.WriteLine("req : "+req);
+        Console.WriteLine("req : "+req);        
     }
 
     void UpdateLoop()
