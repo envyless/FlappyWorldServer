@@ -23,9 +23,9 @@ public class MainGameEngine
 
     public void SetUpManagers()
     {
-        userManager = new UserMnanger(this);
-        collisionManager = new CollisionManager(this);
-        rpcManager = new RPCManager(this);
+        userManager = ActorMaker<UserMnanger>.New(this);
+        collisionManager = ActorMaker<CollisionManager>.New(this);
+        rpcManager = ActorMaker<RPCManager>.New(this);
     }
 
 
@@ -48,11 +48,7 @@ public class MainGameEngine
         while(true)
         {
             //initialized
-            //start
-        
-            //update
-            UpdateLoop();
-
+            
             //late update
             Thread.Sleep(100);
             
@@ -62,18 +58,17 @@ public class MainGameEngine
                 continue;
                 
             }
-                            
 
-            //RspUserUpdate rsp = new RspUserUpdate();
-			//rsp.Users.AddRange(UserMnanger..dictUsers.Values);    
-            //server send user updated
-            //server.Multicast(rsp.ToByteArray());
+            //update
+            UpdateLoop();                        
         }        
     }
 
+    //when packet recieved,
+    //
     internal void OnPacketRecieved(RequestRPC req)
     {
-        Console.WriteLine("req : "+req);        
+        rpcManager.DoAction(req);                     
     }
 
     void UpdateLoop()

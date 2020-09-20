@@ -32,11 +32,27 @@ public class RPCManager : AbsGameManager
         actions.Remove(callback);
     }
 
-    public RPCManager(MainGameEngine _engine) : base(_engine)
+    HashSet<Action<IMessage>> toRemove = new HashSet<Action<IMessage>>();
+    public void DoAction(RequestRPC req)
     {
+        var actions = this.GetActions(req.RequestsCase);
+        toRemove.Clear();
+        foreach(var action in actions)
+        {
+            if(action == null)
+            {
+                toRemove.Add(action);
+            }
+            action.Invoke(req);
+        }
+        
+        foreach(var rm in actions)
+        {
+            actions.Remove(rm);
+        }
     }
 
-    protected override void SetUp()
+    public override void SetUp()
     {
         
     }

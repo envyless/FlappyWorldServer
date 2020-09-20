@@ -22,8 +22,8 @@ namespace FlappyWorldServer
             Console.WriteLine($"Chat TCP session with Id {Id} connected!");
 
             // Send invite message
-            string message = "Hello from TCP chat! Please send a message or '!' to disconnect the client!";
-            SendAsync(message);
+            // string message = "Hello from TCP chat! Please send a message or '!' to disconnect the client!";
+            // SendAsync(message);
         }
 
         protected override void OnDisconnected()

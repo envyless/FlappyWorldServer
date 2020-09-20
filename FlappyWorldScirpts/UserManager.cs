@@ -6,10 +6,6 @@ public class UserMnanger : AbsGameManager
 {    
     public Dictionary<string, User> dictUsers = new Dictionary<string, User>();
 
-    public UserMnanger(MainGameEngine _engine) : base(_engine)
-    {
-    }
-
     //push or update user req
     public void UpdateUser(ReqUserUpdate reqUserUpdate)
     {
@@ -25,8 +21,20 @@ public class UserMnanger : AbsGameManager
         }       
     }
 
-    protected override void SetUp()
+    public override void SetUp()
     {
-        
+        engine.UpdateLogic.Subscribe(_=>{
+            if(dictUsers.Count == 0)
+                return;
+
+            Console.WriteLine("Noti called");
+            
+            //req users updates
+            RequestRPC rsp = new RequestRPC();
+            ReqUsersUpdate usersUpdate = new ReqUsersUpdate();
+			usersUpdate.Users.AddRange(dictUsers.Values);  
+            rsp.ReqUsersUpdate = usersUpdate;    
+            engine.server.Multicast(rsp.ToByteArray());
+        });
     }
 }
