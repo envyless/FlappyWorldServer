@@ -26,8 +26,6 @@ public class UserMnanger : AbsGameManager
         engine.UpdateLogic.Subscribe(_=>{
             if(dictUsers.Count == 0)
                 return;
-
-            Console.WriteLine("Noti called");
             
             //req users updates
             RequestRPC rsp = new RequestRPC();
