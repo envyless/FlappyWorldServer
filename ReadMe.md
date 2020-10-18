@@ -1,4 +1,7 @@
 
+Readme Link  
+https://www.notion.so/FlappyWorld-8b14ae66b994407ab428819163e27f47  
+
 
 #proto3 사용하기 앞서
 
@@ -12,3 +15,6 @@ dotnet add package Google.ProtocolBuf
 #프로토 빌드 && Cp To Assets In Client
 protoc *.proto --csharp_out=./ServerClientClass
 cp -r ./ServerClientClass /mnt/f/git_repo/FlappyWorld/Assets/
+
+
+
